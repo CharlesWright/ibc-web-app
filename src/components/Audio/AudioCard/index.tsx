@@ -55,7 +55,7 @@ export default function AudioCard(props: AudioCardProps) {
                 <Typography variant="h6" color="orange" gutterBottom>{song.Title}</Typography>
 
                 <ReactAudioPlayer
-                    src={`http://localhost:7071/api/media/audio/${song.Url}`}
+                    src={`${process.env.REACT_APP_FUNCTION_APP}/api/media/audio/${song.Url}`}
                     autoPlay={false}
                     controls
                     preload="none"
