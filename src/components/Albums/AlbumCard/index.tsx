@@ -1,4 +1,4 @@
-import { Button, Card, CardActions, CardContent, Collapse, Switch, Typography } from "@mui/material";
+import { Card, CardContent, Collapse, Switch, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Album } from "../../../types/Album";
