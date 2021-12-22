@@ -31,7 +31,7 @@ namespace IBC.Songs
             return new OkObjectResult(song);
         }
 
-        [FunctionName("SongHttp")]
+        [FunctionName("SongsHttp")]
         public static IActionResult GetSongs(
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = "songs")] HttpRequest req,
             ILogger log)
@@ -40,7 +40,7 @@ namespace IBC.Songs
             var containerName = Environment.GetEnvironmentVariable("CONTAINER_NAME");
             TableServiceClient serviceClient = new TableServiceClient(connectionString);
             TableClient tableClient = serviceClient.GetTableClient("audio");
-            var queryResultsLINQ = tableClient.Query<SongEntity>(ent => ent.PartitionKey == "IBC" && ent.RowKey == id);
+            var queryResultsLINQ = tableClient.Query<SongEntity>(ent => ent.PartitionKey == "IBC");
             var songs = queryResultsLINQ.ToArray<SongEntity>();
                         
             return new OkObjectResult(songs);
