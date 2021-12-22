@@ -17,7 +17,7 @@ export const PageContent = () => {
         function getContentInfo(name: string) {
             axios({
                 method: 'GET',
-                url: `${process.env.REACT_APP_FUNCTION_APP}/api/table-content?id=${pageName}`
+                url: "api/table-content?id=${pageName}"
             }).then(response => {
                 setPageDescription(response.data.Description)
             }).catch(error => {
@@ -31,7 +31,7 @@ export const PageContent = () => {
         function getContent(name: string) {
             axios({
                 method: 'GET',
-                url: `${process.env.REACT_APP_FUNCTION_APP}/content/${pageName}.md`
+                url: "api/content/${pageName}.md"
             }).then(response => {
                 setPageContent(response.data)
             })

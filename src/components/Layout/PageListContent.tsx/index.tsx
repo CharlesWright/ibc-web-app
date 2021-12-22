@@ -18,7 +18,7 @@ export const SongListContent = () => {
         function getContentInfo(name: string) {
             axios({
                 method: 'GET',
-                url: `${process.env.REACT_APP_FUNCTION_APP}/api/table-content?id=${pageName}`
+                url: "api/table-content?id=${pageName}"
             }).then(response => {
                 setPageDescription(response.data.Description)
             }).catch(error => {
@@ -32,7 +32,7 @@ export const SongListContent = () => {
         function getContent(name: string) {
             axios({
                 method: 'GET',
-                url: `${process.env.REACT_APP_FUNCTION_APP}/api/content?name=${pageName}.txt`
+                url: "api/content?name=${pageName}.txt"
             }).then(response => {
                 setPageContent(response.data)
             })
