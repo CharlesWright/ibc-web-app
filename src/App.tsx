@@ -25,7 +25,7 @@ function App() {
 
   async function fetchAlbums() {
     let response = await axios(
-      `${process.env.FUNCTION_APP}/api/albums`
+      'api/albums'
     )
     let albums = await response.data
     setAlbums(albums)
@@ -33,7 +33,7 @@ function App() {
 
   async function fetchSongs() {
     let response = await axios(
-      `${process.env.REACT_APP_FUNCTION_APP}/api/songs`
+      'api/songs'
     )
     let songs = await response.data
     setSongs(songs)
